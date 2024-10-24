@@ -1,0 +1,920 @@
+{
+	"info": {
+		"_postman_id": "1c676532-10ca-41cf-bec4-d121efb1e694",
+		"name": "CC_Cars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29886124"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/mohammed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"mohammed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current User Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/mohammed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"mohammed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Current User Info",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"firstName\": \"Admin\",\r\n    \"phoneNumber\": \"2232443\",\r\n    \"email\": \"admin@cccars.com\",\r\n    \"password\": \"superpass799\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Info",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ccreak1\",\r\n    \"firstName\": \"XYZ\",\r\n    \"phoneNumber\": \"324234\",\r\n    \"email\": \"xyz@cccars.com\",\r\n    \"isEnabled\": false,\r\n    \"isVerified\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/ccreak1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"ccreak1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/filter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "mohammed",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mohammedshiha91@gmail.com",
+									"disabled": true
+								},
+								{
+									"key": "firstName",
+									"value": "Mohammed",
+									"disabled": true
+								},
+								{
+									"key": "lastName",
+									"value": "SHIHA",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "CUSTOMER",
+									"disabled": true
+								},
+								{
+									"key": "enabled",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "verified",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user?pageNo=1&pageSize=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Car",
+			"item": [
+				{
+					"name": "Add Car",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"make\": \"Fordx\",\r\n    \"model\": \"Escortx\",\r\n    \"modelYear\": 2024,\r\n    \"fuelType\": \"GASOLINE\",\r\n    \"gear\": \"MANUAL\",\r\n    \"bodyType\": \"COUPE\",\r\n    \"enginePower\": 230,\r\n    \"wheelDrive\": \"FWD\",\r\n    \"seats\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/car",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"car"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Car By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/car/3000990",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"car",
+								"3000990"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Car By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/car/3000085",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"car",
+								"3000085"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Car",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3000990,\r\n    \"make\": \"Mercedes-Benz\",\r\n    \"model\": \"S-Class\",\r\n    \"modelYear\": 1996,\r\n    \"fuelType\": \"GASOLINE\",\r\n    \"gear\": \"AUTOMATIC\",\r\n    \"bodyType\": \"HATCHBACK\",\r\n    \"enginePower\": 372,\r\n    \"wheelDrive\": \"AWD\",\r\n    \"seats\": 2,\r\n    \"createdAt\": \"2024-10-09T23:35:36Z\",\r\n    \"updatedAt\": \"2024-09-12T20:05:50Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/car/3000990",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"car",
+								"3000990"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Car Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/car/filter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"car",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "make",
+									"value": "BMW",
+									"disabled": true
+								},
+								{
+									"key": "model",
+									"value": "x3",
+									"disabled": true
+								},
+								{
+									"key": "modelYear",
+									"value": "2009",
+									"disabled": true
+								},
+								{
+									"key": "gear",
+									"value": "AUTOMATIC",
+									"disabled": true
+								},
+								{
+									"key": "bodyType",
+									"value": "COUPE",
+									"disabled": true
+								},
+								{
+									"key": "enginePower",
+									"value": "331",
+									"disabled": true
+								},
+								{
+									"key": "wheelDrive",
+									"value": "FOUR_WD",
+									"disabled": true
+								},
+								{
+									"key": "seats",
+									"value": "4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Car Page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/car?pageNo=1&pageSize=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"car"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Car Makes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/car/makes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"car",
+								"makes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Car Models",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/car/models?make=BMW",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"car",
+								"models"
+							],
+							"query": [
+								{
+									"key": "make",
+									"value": "BMW"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Listing",
+			"item": [
+				{
+					"name": "Add Listing",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"carId\": 3000454,\r\n    \"mileage\": 10000,\r\n    \"color\": \"Black\",\r\n    \"description\": \"A nice car for sale\",\r\n    \"condition\": \"NEW\",\r\n    \"location\": \"Ramallah\",\r\n    \"price\": 15000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/listing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"listing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Listing",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"carId\": 3000454,\r\n    \"mileage\": 10000,\r\n    \"color\": \"Black\",\r\n    \"status\": \"ACTIVE\",\r\n    \"description\": \"A nice car for sale\",\r\n    \"condition\": \"NEW\",\r\n    \"location\": \"Ramallah\",\r\n    \"price\": 20000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/listing/5001001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"listing",
+								"5001001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listing By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/listing/5001001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"listing",
+								"5001001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Listing",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/listing/5000024",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"listing",
+								"5000024"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Listing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/listing/search?keyword=Etiam%20Milwaukee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"listing",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "Etiam%20Milwaukee"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Listing Comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/listing/5000667/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"listing",
+								"5000667",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"this is a nice car\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/listing/5000667/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"listing",
+								"5000667",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"this is a very nice car\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/listing/5000667/comments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"listing",
+								"5000667",
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Picture",
+			"item": [
+				{
+					"name": "Add Picture",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "payload",
+									"type": "file",
+									"src": "/C:/Users/ms/Downloads/mercedes-c-klasse-limousine-2021.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/listing/5000021/pictures",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"listing",
+								"5000021",
+								"pictures"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Picture",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/files/pictures/b7c58c2a-74b2-44ee-9b5d-1ac106c0df34.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"pictures",
+								"b7c58c2a-74b2-44ee-9b5d-1ac106c0df34.jpg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"superpass799\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Addmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\": \"mohammed\",\r\n\t\"email\": \"mohammedshiha@gmail.com\",\r\n\t\"firstName\": \"Mohammed\",\r\n\t\"lastName\": \"SHIHA\",\r\n\t\"password\": \"mypassword76\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/add-admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"add-admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Signup",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\": \"xyzz\",\r\n\t\"email\": \"xyzmail@gmail.com\",\r\n\t\"firstName\": \"Mohammed\",\r\n\t\"lastName\": \"SHIHA\",\r\n\t\"phoneNumber\": \"+503 733 790 774\",\r\n\t\"password\": \"mypassword76\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbeyJhdXRob3JpdHkiOiJBRE1JTiJ9XSwiaWF0IjoxNzI5NzYxOTkzLCJleHAiOjE3Mjk4NDgzOTN9.4umz8hmWSBRtBYP7G8XTUASAnxwyFam-5N-Hb_FAJx0",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
