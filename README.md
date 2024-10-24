@@ -1,6 +1,9 @@
 # cc-cars
 A simple car marketplace REST API using Spring Boot
 
+### Data Dump
+You can create the database and populate it with sample data by importing the dump file `cc_cars_dump.sql` into MySQL.
+
 ### Endpoints:
  - **PUT** `/car/{carId}` - code.climb.cccars.controller.CarController#updateCar(int, Car)
  - **GET** `/listing/{listingId}/comments` - code.climb.cccars.controller.ListingController#getListingComments(int)
@@ -30,3 +33,6 @@ A simple car marketplace REST API using Spring Boot
  - **GET** `/car/models` - code.climb.cccars.controller.CarController#getModels(String)
  - **DELETE** `/user/{username}` - code.climb.cccars.controller.UserController#deleteUser(String)
  - **GET** `/user/filter` - code.climb.cccars.controller.UserController#filterUsers(String, String, String, String, Role, Boolean, Boolean)
+
+## Postman
+You can find examples on all endpoints in the Postman collection file `cc_cars.postman_collection.json`
