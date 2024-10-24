@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import java.time.Instant;
 
 @Entity
-@Table(name = "pictures")
+@Table(name = "picture")
 public class Picture {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
